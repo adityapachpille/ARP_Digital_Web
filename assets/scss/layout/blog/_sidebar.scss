@@ -1,0 +1,262 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  5.2 Sidebar css
+/*----------------------------------------*/
+
+.sidebar-widget {
+    padding: 40px;
+    border-radius: 10px;
+    background: #EBEDFF;
+
+    @media #{$lg,$md,$sm} {
+        padding: 24px;
+    }
+
+    @media #{$xs} {
+        padding: 20px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    &.border-top-style {
+        position: relative;
+
+        &::after,
+        &::before {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            left: 0;
+            top: 92px;
+            content: "";
+            background: $border-color;
+
+            @media #{$lg,$md,$sm,$xs} {
+                top: 75px;
+            }
+        }
+
+        &::before {
+            width: 40px;
+            left: 47px;
+            z-index: 2;
+            background: $theme-color;
+        }
+    }
+
+    &.border-style {
+        background: none;
+        border: 1px solid $border-color;
+    }
+}
+
+.sidebar-search-input {
+    input {
+        font-size: 14px;
+        font-weight: 900;
+        height: 56px;
+        border: 0;
+        padding-right: 80px;
+        background: $white-color;
+        border-radius: 10px;
+    }
+}
+
+.sidebar-search-icon {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    font-size: 16px;
+    right: 0;
+    line-height: 56px;
+    color: $white-color;
+    background: $theme-color;
+    border-radius: 0 10px 10px 0
+}
+
+.sidebar-widget-title {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1;
+    text-transform: capitalize;
+    color: $title-color;
+
+    @media #{$lg,$md,$sm,$xs} {
+        font-size: 24px;
+    }
+}
+
+.sidebar-category {
+    ul {
+        li {
+            list-style: none;
+            transition: .3s;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $border-color;
+
+                &:hover {
+                    border-radius: 10px;
+                    border-bottom: 1px solid $theme-color;
+                }
+            }
+
+            a {
+                font-size: 18px;
+                font-weight: 900;
+                display: flex;
+                padding: 19px 25px;
+                align-items: center;
+                color: $title-color;
+                border-radius: 10px;
+                text-transform: capitalize;
+                justify-content: space-between;
+                @include at-transition();
+
+                @media #{$lg} {
+                    font-size: 16px;
+                    padding: 19px 19px;
+                }
+
+                @media #{$xs} {
+                    font-size: 16px;
+                    padding: 15px 10px;
+                }
+
+                &:hover {
+                    color: $white-color;
+                    background: $theme-color;
+
+                }
+            }
+        }
+    }
+}
+
+.sidebar-download-list {
+    padding: 14.3px 70px;
+    background: $theme-color;
+    border-radius: 50px;
+    @media #{$xl} {
+        padding: 14.3px 50px;
+    }
+    @media #{$lg} {
+        padding: 14.3px 30px;
+    }
+    &:not(:last-child){
+        margin-bottom: 15px;
+    }
+
+    &:nth-child(even){
+        background-color: $title-color;
+    }
+}
+
+.sidebar-download-text {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white-color;
+}
+
+.sidebar-info-item {
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &:hover {
+        .sidebar-info-icon {
+            color: $white-color;
+            background: $theme-color;
+            border-color: $theme-color;
+        }
+
+        .sidebar-info-text {
+            color: $theme-color;
+        }
+    }
+}
+
+.sidebar-info-icon {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    text-align: center;
+    color: $theme-color;
+    border: 1px solid $theme-color;
+    @include at-transition();
+}
+
+.sidebar-info-category {
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: $title-color;
+}
+
+.sidebar-info-text {
+    font-size: 18px;
+    font-weight: 900;
+    @include at-transition();
+
+    @media #{$lg,$xs} {
+        font-size: 16px;
+    }
+}
+
+.sidebar-widget-tag {
+    position: relative;
+    padding-top: 30px;
+
+    &::after,
+    &::before {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        top: 0;
+        content: "";
+        background: $border-color;
+        border-radius: 30px;
+    }
+
+    &::before {
+        width: 30px;
+        left: 0;
+        z-index: 2;
+        background: $theme-color;
+        border-radius: 30px;
+    }
+}
+
+.tagcloud a {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1;
+    padding: 15px 18px;
+    border-radius: 5px;
+    text-align: center;
+    color: $title-color;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-transform: capitalize;
+    border: 1px solid $border-color;
+    @include at-transition;
+
+    &:hover {
+        color: $white-color;
+        background: $theme-color;
+        border-color: $theme-color;
+    }
+
+    &:not(:last-child) {
+        margin-right: 10px;
+
+        @media #{$xs} {
+            margin-right: 8px;
+        }
+    }
+}

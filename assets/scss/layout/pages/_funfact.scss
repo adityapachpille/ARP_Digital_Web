@@ -1,0 +1,222 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.12 Funfact css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-funfact {
+    &-number {
+        font-size: 80px;
+        font-weight: 1000;
+        line-height: 1;
+
+        &.at-fun-shape {
+            background-image: url('../img/funfact/number-bg.jpg');
+            background-size: cover;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            color: transparent;
+            margin-bottom: -15px;
+
+            b {
+                font-weight: 1600;
+            }
+        }
+    }
+
+    &-text {
+        font-weight: 900;
+        font-size: 24px;
+        text-transform: capitalize;
+        color: $title-color;
+        margin-bottom: 0;
+    }
+
+    // funfact-style-2 here
+    &-style-2 {
+        align-items: center;
+        gap: 6px;
+
+        .at-funfact {
+            &-number {
+                font-size: 30px;
+                font-weight: 900;
+                color: $title-color;
+                background-image: none;
+                line-height: 1.1;
+            }
+        }
+
+        .at-sec-text {
+            font-weight: 900;
+            font-size: 12px;
+            line-height: 1.2;
+            margin-bottom: 0;
+            color: $body-color;
+        }
+    }
+
+    &-wrapp {
+        border-radius: 200px;
+
+        @media #{$md} {
+            border-radius: 50px;
+        }
+
+        @media #{$sm,$xs} {
+            border-radius: 20px;
+        }
+
+        .row {
+            [class*="col-"] {
+                &:not(:last-child) {
+                    .at-funfact {
+                        &-style-3 {
+                            position: relative;
+                            border-right: 2px solid $white-color;
+
+                            @media #{$md,$sm,$xs} {
+                                border-bottom: 2px solid $white-color;
+                            }
+
+                            &::after {
+                                position: absolute;
+                                width: 9px;
+                                height: 9px;
+                                top: 50px;
+                                right: -5px;
+                                content: "";
+                                background: $white-color;
+                                border-radius: 100px;
+                                animation: updown 10s forwards infinite;
+
+                                @media #{$md,$sm,$xs} {
+                                    top: auto;
+                                    bottom: -5px;
+                                    animation: leftRight 10s forwards infinite;
+                                }
+                            }
+
+                            &.border-odd {
+                                @media #{$md} {
+                                    border-bottom: 0;
+
+                                    &::after {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        .at-funfact-style-3 {
+                            &::after {
+                                animation: updown 13s forwards infinite;
+
+                                @media #{$md,$sm,$xs} {
+                                    animation: leftRight 13s forwards infinite;
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(even) {
+                        .at-funfact-style-3 {
+                            @media #{$md,$sm,$xs} {
+                                border-right: 0;
+                            }
+                        }
+                    }
+
+                    &:nth-child(odd) {
+                        .at-funfact-style-3 {
+                            @media #{$sm,$xs} {
+                                border-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-title {
+        font-weight: 900;
+        font-size: 48px;
+        color: $white-color;
+        margin-bottom: 3px;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+    }
+
+    // funfact-style-3 here
+    &-style-3 {
+        padding: 53px 0;
+
+        @media #{$md,$sm,$xs} {
+            padding: 24px 0;
+        }
+
+        .at-sec-text2 {
+            font-weight: 900;
+            margin-bottom: 0;
+        }
+    }
+
+    &-space {
+        position: absolute;
+        margin-top: -94px;
+        width: 100%;
+    }
+
+    &-user-box {
+        .at-funfact-number {
+            font-weight: 900;
+            font-size: 18px;
+        }
+    }
+
+    // funfact-style-4 here
+    &-style-4 {
+        padding: 47.8px 0;
+        margin: 0 -1px;
+        border: 1px solid rgba(27, 36, 58, 0.2);
+        @include at-transition();
+
+        @media #{$md,$sm,$xs} {
+            margin: -1px;
+        }
+
+        .at-funfact {
+            &-title {
+                color: $title-color;
+            }
+        }
+
+        .at-sec-text2 {
+            margin-bottom: 0;
+
+            @media #{$lg} {
+                font-size: 16px;
+            }
+        }
+
+        &:hover {
+            background: $theme-color;
+            border-color: $theme-color;
+
+            .at-funfact {
+                &-title {
+                    color: $white-color;
+                }
+            }
+
+            .at-sec-text2 {
+                color: $white-color;
+            }
+        }
+    }
+
+}

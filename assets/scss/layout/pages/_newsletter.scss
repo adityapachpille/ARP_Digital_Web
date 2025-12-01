@@ -1,0 +1,75 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.14 Newsletter css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-newsletter {
+    &-input {
+        input {
+            position: relative;
+            height: 81px;
+            font-size: 18px;
+            font-weight: 900;
+            padding-left: 35px;
+            padding-right: 200px;
+            background: $white-color;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+            border: dashed 2.5px rgba($color: #3747FF, $alpha: .20);
+            border-radius: 50px;
+            @media #{$xs} {
+                height: 65px;
+                padding-right: 35px;
+            }
+
+            &::placeholder {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &-box {
+        position: relative;
+
+        .at-btn-box-primary {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+        }
+
+        .at-btn-primary-text {
+            padding: 18px 45.1px;
+            text-transform: uppercase;
+        }
+
+        &.style-2 {
+            .at-newsletter-input {
+                input {
+                    border: 0;
+                    height: 60px;
+                    padding: 25px 20px;
+                    padding-right: 50px;
+                    border-radius: 2px;
+                    color: $white-color;
+                    background: rgba($color: #696868, $alpha: .2);
+                    box-shadow: none;
+
+                    &::placeholder {
+                        color: $border-color;
+                    }
+                }
+            }
+
+            .at-btn-icon {
+                margin-left: 0;
+                i {
+                    width: auto;
+                    height: auto;
+                    line-height: 45px;
+                    background: none;
+                }
+            }
+        }
+    }
+}

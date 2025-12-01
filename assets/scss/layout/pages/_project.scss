@@ -1,0 +1,459 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.20 Project css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-project {
+    &-style1 {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            width: 38.7%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            content: "";
+            background: $theme-color;
+            z-index: -1;
+
+            @media #{$sm,$xs} {
+                position: static;
+            }
+        }
+    }
+
+    &-box1 {
+        background: $title-color;
+        border-radius: 5px 0 0 0;
+
+        @media #{$xs} {
+            padding-top: 30px;
+        }
+
+        .at-project-thumb{
+            @media #{$xs} {
+                height: 350px;
+            }
+        }
+    }
+
+    &-number {
+        position: absolute;
+        top: 60px;
+        left: 30px;
+        font-weight: 900;
+        font-size: 48px;
+        color: transparent;
+        -webkit-text-stroke: 1px $border-color;
+        opacity: .5;
+        z-index: 2;
+
+        @media #{$xs} {
+            position: static;
+        }
+    }
+
+    &-thumb-box {
+        flex: 0 0 auto;
+        border-radius: 0 5px 0 0;
+
+        @media #{$x4l,$x3l,$xxl,$lg} {
+            flex: auto;
+        }
+
+        img {
+            border-radius: 0 5px 0 0;
+        }
+    }
+
+    &-content {
+        margin-left: 30px;
+        padding-right: 20px;
+        margin-bottom: 60px;
+
+        @media #{$xxl} {
+            margin-left: 15px;
+        }
+
+        @media #{$xs} {
+            margin: 0;
+            padding: 0 15px;
+            margin-bottom: 60px;
+        }
+    }
+
+    &-shape {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @media #{$lg} {
+            right: -50px;
+        }
+    }
+
+    &-btn {
+        position: absolute;
+        left: -25px;
+        top: 50%;
+        z-index: 2;
+        text-align: center;
+        transform: translateY(-50%);
+
+        @media #{$xs} {
+            left: 0;
+            right: 0;
+            top: 4%;
+        }
+
+        .at-btn-icon {
+            &.style-2 {
+                i {
+                    padding: 45px 15px;
+                    border-radius: 50px;
+                    background: $theme-color;
+                    @include at-transition();
+
+                    span {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    &:hover {
+                        background: $theme-color2;
+                    }
+                }
+            }
+        }
+    }
+
+    &-active {
+        margin-left: 300px;
+
+        @media #{$x4l} {
+            margin-left: 190px;
+        }
+
+        @media #{$x3l} {
+            margin-left: 140px;
+        }
+
+        @media #{$xxl} {
+            margin-left: 0;
+        }
+
+        @media #{$xl,$lg,$md,$sm,$xs} {
+            margin-left: 18px;
+        }
+
+        @media #{$xs} {
+            margin-left: 18px;
+            margin-right: 18px;
+        }
+    }
+
+    // project card 2 here
+    &-card-2 {
+        .at-project {
+            &-content {
+                padding: 0;
+                margin-left: 0;
+                padding-bottom: 15px;
+                margin-bottom: 0;
+                border-bottom: 1px solid $border-color;
+
+                .at-box-title {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-thumb {
+                height: auto;
+                border-radius: 10px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &:hover {
+            .at-img-hover {
+                &::before {
+                    animation: shine 1s;
+                }
+
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &-2-active {
+        margin-left: -110px;
+
+        @media #{$md,$sm,$xs} {
+            margin: 0 15px;
+        }
+
+        .swiper-wrapper {
+            .swiper-slide {
+                width: auto !important;
+
+                @media #{$md,$sm,$xs} {
+                    width: 100% !important;
+                }
+
+            }
+        }
+    }
+
+    // project-card 3 here
+
+    &-card-3 {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+
+        .at-project {
+            &-thumb {
+                img {
+                    width: 100%;
+                }
+            }
+
+            &-titlebox {
+                position: absolute;
+                bottom: -100px;
+                left: 40px;
+                right: 40px;
+                padding: 12px;
+                background-color: $white-color;
+                border-radius: 10px 10px 0 0;
+                @include at-transition();
+
+                @media #{$lg,$md,$xs} {
+                    left: 10px;
+                    right: 10px;
+
+                }
+            }
+
+            &-title {
+                font-weight: 900;
+                font-size: 24px;
+                text-transform: capitalize;
+                color: $title-color;
+                @media #{$lg,$md,$xs} {
+                    font-size: 20px;
+                    
+                }
+            }
+
+            &-content {
+                position: absolute;
+                top: 50px;
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                margin: 0;
+                padding: 0 40px;
+                overflow: hidden;
+                border-radius: 10px;
+                background: rgba($color: #3747ff, $alpha: .9);
+                border: 3px solid rgba(255, 255, 255, 0.9);
+                opacity: 0;
+                visibility: hidden;
+                @include at-transition();
+
+                @media #{$lg,$md,$xs} {
+                    left: 15px;
+                    right: 15px;
+                    padding: 0 15px;
+
+                }
+            }
+        }
+
+        &:hover {
+            .at-project {
+                &-content {
+                    top: 20px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                &-titlebox {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    &-icon {
+        position: absolute;
+        width: 77px;
+        height: 77px;
+        top: 70px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 29px;
+        line-height: 77px;
+        text-align: center;
+        color: $theme-color2;
+        text-align: center;
+        display: inline-block;
+        background: $white-color;
+        border-radius: 1000px;
+        border: 1px solid $border-color transparent;
+        @include at-transition();
+
+        @media #{$lg,$md,$xs} {
+            top: 20px;
+            
+        }
+
+        &:hover {
+            color: $white-color;
+            background: $theme-color2;
+            border: 1px solid $theme-color2;
+        }
+    }
+
+    &-category {
+        font-size: 14px;
+        font-weight: 600;
+        display: block;
+        text-transform: capitalize;
+        color: $theme-color;
+        margin-bottom: 5px;
+    }
+}
+
+// project-details-area start
+.project-details {
+    &-thumb {
+        border-radius: 10px;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    &-info-wrapp {
+        & .row {
+            [class*="col-"] {
+                &:nth-child(2) {
+                    & .project-details {
+                        &-info-item {
+                            &::after {
+                                right: auto;
+                                left: 16rem;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    & .project-details {
+                        &-info-item {
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-info-item {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            width: 266px;
+            height: 1px;
+            top: 50%;
+            content: "";
+            left: 16rem;
+            background: $border-color;
+            transform: translateY(-50%);
+
+            @media #{$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+    }
+
+    &-title {
+        font-weight: 900;
+        font-size: 30px;
+        text-transform: capitalize;
+        color: $title-color;
+
+        @media #{$sm,$xs} {
+            font-size: 24px;
+        }
+    }
+
+    &-info-text {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &-info-title {
+        font-size: 24px;
+        font-weight: 900;
+        text-transform: capitalize;
+        color: $title-color;
+
+        @media #{$sm,$xs} {
+            font-size: 18px;
+        }
+    }
+
+    &-feature-list {
+        font-size: 16px;
+        font-weight: 900;
+        list-style: none;
+        display: flex;
+        align-items: start;
+        gap: 15px;
+        text-transform: capitalize;
+        color: $body-color;
+        margin-bottom: 15px;
+
+        i {
+            color: $theme-color;
+            margin-top: 5px;
+        }
+    }
+
+    &-thumb-box {
+        gap: 30px;
+
+        @media #{$sm} {
+            gap: 15px;
+        }
+    }
+
+    &-thumb {
+        border-radius: 10px;
+
+        &:not(:last-child) {
+            @media #{$xs} {
+                margin-bottom: 15px;
+            }
+        }
+
+        img {
+            border-radius: 10px;
+        }
+    }
+}

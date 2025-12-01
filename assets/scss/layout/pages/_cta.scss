@@ -1,0 +1,94 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.9 Cta css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-cta {
+    &-logo {
+        position: relative;
+        z-index: 2;
+
+        @media #{$sm,$xs} {
+            top: 0;
+        }
+
+        &::before {
+            position: absolute;
+            width: 387px;
+            height: 134px;
+            top: -29px;
+            left: 0;
+            content: "";
+            background: $title-color;
+            z-index: -1;
+
+            @media #{$xl} {
+                width: 375px;
+            }
+
+            @media #{$sm,$xs} {
+                width: 100%;
+                height: 134px;
+            }
+        }
+    }
+
+    &-info-title {
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 1.5;
+        text-transform: capitalize;
+        margin-bottom: 0;
+    }
+
+    &-newslatter-box {
+        @media #{$sm,$xs} {
+            margin-bottom: 30px;
+        }
+    }
+
+    &-newslatter-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @media #{$xs} {
+            position: static;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .at-btn-primary-text {
+            color: $title-color;
+            padding: 20.8px 32.5px;
+            background: $theme-color2;
+        }
+    }
+
+    &-newslatter-input {
+        input {
+            font-weight: 600;
+            padding: 29px 30px;
+            padding-right: 200px;
+            background: $white-color;
+            border-radius: 30px;
+
+            @media #{$xs} {
+                padding-right: 30px;
+            }
+
+            &::placeholder {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &-newslatter-icon {
+        i{
+            img{
+                margin-top: -5px;
+            }
+        }
+    }
+}

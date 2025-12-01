@@ -1,0 +1,52 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.26 Textslider css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-textslider {
+  &-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1;
+    color: $white-color;
+    margin-bottom: 0;
+  }
+
+  &-shape {
+    margin-left: 25px;
+  }
+
+  &-space {
+    padding: 24px 0;
+  }
+
+  &-style-2 {
+    .at-textslider-shape {
+      margin-left: 0;
+      margin-right: 25px;
+    }
+  }
+
+  &-style-3 {
+    position: relative;
+    padding: 26.5px 0;
+    z-index: 3;
+
+    .at-textslider-title {
+      font-size: 36px;
+    }
+
+    &::after {
+      position: absolute;
+      width: 330px;
+      height: 32px;
+      top: 98.5%;
+      right: 20.8%;
+      content: "";
+      background: $theme-color;
+      clip-path: polygon(0 0, 100% 0, 91% 100%, 9% 100%);
+      z-index: 2;
+    }
+  }
+}

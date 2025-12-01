@@ -1,0 +1,260 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.12 Section Title
+/*----------------------------------------*/
+.#{$theme-prefix}-sec {
+    &-title {
+        font-weight: 900;
+        font-size: 48px;
+        text-transform: capitalize;
+        color: $title-color;
+        margin-bottom: -0.26em;
+        letter-spacing: 1.7px;
+
+        @media #{$xl,$lg,$md,$sm} {
+            font-size: 38px;
+        }
+
+        @media #{$xs} {
+            font-size: 24px;
+        }
+
+        br {
+            @media #{$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+    }
+
+    &-subtitle {
+        position: relative;
+        font-size: 20px;
+        line-height: 1;
+        font-weight: 900;
+        display: inline-block;
+        text-transform: uppercase;
+        color: $theme-color;
+
+        &::before {
+            position: absolute;
+            width: 33px;
+            height: 2px;
+            left: -43px;
+            top: 6px;
+            content: "";
+            background: $theme-color;
+        }
+
+        &::after {
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            left: -34px;
+            top: 14px;
+            content: "";
+            background: $theme-color;
+        }
+
+        &.theme-style2 {
+            color: $theme-color2;
+
+            &::after,
+            &::before {
+                background: $theme-color2;
+            }
+
+            .subtitle-right-shape {
+                color: $theme-color2;
+
+                &::after,
+                &::before {
+                    background: $theme-color2;
+                }
+            }
+        }
+
+        .subtitle-right-shape {
+            position: absolute;
+            right: 0;
+
+            &::before {
+                position: absolute;
+                width: 33px;
+                height: 2px;
+                right: -41px;
+                top: 6px;
+                content: "";
+                background: $theme-color;
+            }
+
+            &::after {
+                position: absolute;
+                width: 24px;
+                height: 2px;
+                right: -32px;
+                top: 14px;
+                content: "";
+                background: $theme-color;
+            }
+
+            &.theme-style1 {
+                color: $theme-color;
+
+                &::after,
+                &::before {
+                    background: $theme-color;
+                }
+            }
+
+            &.white-style {
+                color: $white-color;
+
+                &::after,
+                &::before {
+                    background: $white-color;
+                }
+            }
+
+            &.black-style {
+                color: $title-color;
+
+                &::after,
+                &::before {
+                    background: $title-color;
+                }
+            }
+        }
+
+        &.theme-style1 {
+            color: $theme-color;
+
+            &::after,
+            &::before {
+                background: $theme-color;
+            }
+        }
+
+        &.theme-style2 {
+            color: $theme-color2;
+
+            &::after,
+            &::before {
+                background: $theme-color2;
+            }
+        }
+
+        &.white-style {
+            color: $white-color;
+
+            &::after,
+            &::before {
+                background: $white-color;
+            }
+        }
+
+        &.black-style {
+            color: $title-color;
+
+            &::after,
+            &::before {
+                background: $title-color;
+            }
+        }
+
+        &.style-2 {
+
+            &::after,
+            &::before {
+                background: none;
+            }
+        }
+
+        &.at-anime-text-2{
+            text-transform: capitalize;
+        }
+    }
+
+    &-text {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #727272;
+        display: block;
+        text-transform: capitalize;
+    }
+
+    &-text2 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.5;
+        color: $body-color;
+        display: block;
+        text-transform: capitalize;
+    }
+}
+
+.#{$theme-prefix}-box {
+    &-title {
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 1.4;
+        display: inline-block;
+        text-transform: capitalize;
+        color: $title-color;
+        @media #{$xs} {
+            font-size: 20px;            
+        }
+    }
+}
+
+.#{$theme-prefix}-title-area {
+    @media #{$md,$sm,$xs} {
+        margin-bottom: 30px;
+    }
+}
+
+.#{$theme-prefix}-title {
+    &-user {
+        img {
+            margin-top: -7px;
+        }
+    }
+}
+
+.#{$theme-prefix}-minus-space {
+    margin-top: -0.5em;
+}
+
+.at-theme-text2 {
+    color: $theme-color2;
+}
+
+.trans-inh {
+    text-transform: inherit;
+}
+
+.at-anime-text-2,
+.at-anime-text-3 {
+    text-transform: inherit;
+}
+
+.fw-5 {
+    font-weight: 500;
+}
+
+.fw-6 {
+    font-weight: 600;
+}
+
+.fw-7 {
+    font-weight: 700;
+}
+
+.fw-8 {
+    font-weight: 800;
+}
+
+.fw-9 {
+    font-weight: 900;
+}

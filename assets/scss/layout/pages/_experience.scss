@@ -1,0 +1,26 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.10 Experience css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-experience {
+    &-box1 {
+        & .at-funfact-number {
+            font-size: 80px;
+            font-weight: 1000;
+            line-height: 1;
+            background-image: url('../img/funfact/number-bg.jpg');
+            background-size: cover;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            color: transparent;
+
+        }
+
+        & .at-funfact-text{
+            line-height: 1.4;
+        }
+    }
+}

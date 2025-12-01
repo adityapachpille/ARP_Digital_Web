@@ -1,0 +1,72 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  4.2 Mobilemenu css
+/*----------------------------------------*/
+.at-offcanvas-menu {
+    margin-bottom: 40px;
+
+    & ul{
+        list-style: none;
+
+        & li {
+            position: relative;
+            
+            & > a{
+                padding: 8px 0;
+                display: block;
+                font-size: 16px;
+                font-weight: 600;
+                color: $title-color;
+                text-transform: uppercase;
+
+                & i{
+                    display: none;
+                }
+            }
+            
+            &:not(:last-child){
+                & > a{
+                    border-bottom: 1px solid rgba(1, 15, 28, 0.1);
+                }
+            }
+
+            &.active{
+                & > a{
+                    color: $theme-color;
+                }
+                & > .at-menu-close{
+                    color: $white-color;
+                    background: $black-color;
+                    border-color: $black-color;
+                    & i{
+                        @include at-transform(rotate(90deg));
+                    }
+                }
+            }
+
+            & .at-submenu {
+                display: none;
+                padding-left: 20px;
+            }
+
+            & .at-mega-menu{
+                display: none;
+            }
+        }
+    }
+}
+.at-menu-close {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    height: 30px;
+    width: 30px;
+    font-size: 12px;
+    line-height: 29px;
+    text-align: center;
+    border: 1px solid rgba(1, 15, 28, 0.12);
+    & i{
+        transition: all .3s;
+    }
+}

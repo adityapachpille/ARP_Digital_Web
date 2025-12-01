@@ -1,0 +1,372 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.1 Footer Style 1
+/*----------------------------------------*/
+
+.#{$theme-prefix}-footer {
+
+    &-top {
+        .row {
+            [class*="col-"] {
+                &:not(:last-child) {
+                    @media #{$md,$sm,$xs} {
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-wrapp {
+        margin-top: 50px;
+        margin-bottom: 130px;
+
+        @media #{$lg,$md,$sm,$xs} {
+            margin-bottom: 50px;
+        }
+
+        .row {
+            [class*="col-"] {
+                &:not(:last-child) {
+                    & .at-footer-widget {
+                        @media #{$lg,$md,$sm,$xs} {
+                            margin-bottom: 40px;
+                        }
+
+                        &.footer-col-2-1 {
+                            @media #{$sm,$xs} {
+                                margin-bottom: 80px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-widget-title {
+        position: relative;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1;
+        padding-bottom: 20px;
+        text-transform: capitalize;
+        color: $white-color;
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: 61px;
+            height: 4px;
+            left: 0;
+            bottom: 0;
+            content: "";
+            background: $theme-color;
+            border-radius: 2px;
+        }
+
+        &::after {
+            width: 16px;
+            height: 4px;
+            left: 71px;
+            background: $theme-color2;
+            animation: at-footerLine 7s linear infinite;
+        }
+    }
+
+    &-widget-link {
+        ul {
+            li {
+                list-style: none;
+
+                &:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+
+                a {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 162%;
+                    text-transform: capitalize;
+                    color: $border-color;
+
+                    &:hover {
+                        color: $theme-color;
+                    }
+
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-style-1 {
+        position: relative;
+        
+        &::before,
+        &::after {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            left: 0;
+            top: 42.5%;
+            content: "";
+            background: rgba($color: #696868, $alpha: .25);
+        }
+
+        &::before {
+            @media #{$lg} {
+                top: 30.5%;
+            }
+
+            @media #{$md} {
+                top: 36.5%;
+            }
+
+            @media #{$sm} {
+                top: 31.5%;
+            }
+
+            @media #{$xs} {
+                top: 33%;
+            }
+        }
+
+        &::after {
+            top: 0;
+            width: 1px;
+            height: 100%;
+            left: 33.3%;
+
+            @media #{$xxl,$xl} {
+                left: 26.3%;
+            }
+
+            @media #{$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+
+        .at-footer-wrapp {
+            margin-top: 50px;
+            margin-bottom: 95px;
+        }
+    }
+
+    &-download {
+        display: inline-block;
+
+        &-icon {
+            font-size: 18px;
+            line-height: 1.3;
+            font-weight: 600;
+            color: $white-color;
+            display: flex;
+            padding: 11px 52px 11px 20px;
+            border: 1px solid rgba($color: #696868, $alpha: .4);
+            border-radius: 10px;
+            gap: 15px;
+            @include at-transition();
+
+            &:hover {
+                color: $theme-color;
+            }
+
+            i {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                line-height: 40px;
+                text-align: center;
+                color: $white-color;
+                background: $theme-color;
+                border-radius: 100px;
+                @include at-transition();
+
+                &:hover {
+                    color: $white-color;
+                    background: $theme-color2;
+                }
+            }
+        }
+    }
+
+    &-cta-title {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: $white-color;
+
+        @media #{$md,$sm,$xs} {
+            font-size: 31px;
+        }
+    }
+
+    &-cta-mail {
+        gap: 15px;
+    }
+
+    &-cta-mail-icon {
+        font-size: 20px;
+        padding: 6px 9px;
+        color: $white-color;
+        border-radius: 2px;
+        border: 1px solid rgba($color: #696868, $alpha: .4);
+    }
+
+    &-cta-mail-content {
+
+        p,
+        a {
+            font-weight: 900;
+            font-size: 16px;
+            text-transform: capitalize;
+            color: $white-color;
+            margin-bottom: 0;
+        }
+
+        a {
+            color: $border-color;
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+
+    &-cta1-btn {
+        @media #{$lg} {
+            margin-left: -18px;
+        }
+    }
+
+    &-info-title {
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 1.3;
+        text-transform: capitalize;
+        color: $white-color;
+    }
+
+    &-info {
+        max-width: 230px;
+    }
+
+    &-info-text {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.6;
+        text-transform: capitalize;
+        color: $border-color;
+    }
+
+    &-social-title {
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 1;
+        padding-bottom: 20px;
+        text-transform: capitalize;
+        color: $white-color;
+    }
+
+    &-social-box {
+        ul {
+            li {
+                display: inline-block;
+
+                a {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 14px;
+                    line-height: 30px;
+                    text-align: center;
+                    display: block;
+                    color: $white-color;
+                    background: rgba($color: #696868, $alpha: .2);
+                    border-radius: 100px;
+                    @include at-transition();
+
+                    &.svg-icon {
+                        line-height: 26px;
+                    }
+
+                    &:hover {
+                        color: $white-color;
+                        background: $theme-color;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.footer-col {
+    &-1-2 {
+        margin-left: 95px;
+
+        @media #{$lg,$md,$sm,$xs} {
+            margin-left: 0;
+        }
+    }
+
+    &-1-3 {
+        margin-left: 38px;
+        @media #{$lg,$md,$sm,$xs} {
+            margin-left: 0;
+        }
+    }
+
+    &-1-4 {
+        margin-left: 50px;
+        @media #{$lg,$md,$sm,$xs} {
+            margin-left: 0;
+        }
+    }
+}
+
+.#{$theme-prefix}-copyright {
+    &-wrapp {
+        background: $black-color2;
+        border-top: 1px solid rgba($color: #696868, $alpha: .25);
+    }
+
+    &-text {
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 1.5;
+        text-transform: capitalize;
+        color: $smoke-color;
+        margin-bottom: 0;
+
+        @media #{$sm,$xs} {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: $theme-color2;
+        }
+    }
+
+    &-privacy-box {
+        a {
+            font-weight: 600;
+            color: $white-color;
+
+            &:hover {
+                color: $theme-color2;
+            }
+        }
+
+        .dvr {
+            color: $white-color;
+            margin: 0 8px;
+        }
+    }
+}

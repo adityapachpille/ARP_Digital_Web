@@ -1,0 +1,187 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.8 Contact css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-contact {
+    &-input {
+        height: 100%;
+
+        .nice-select {
+            height: 56px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 56px;
+            border: 1px solid transparent;
+            background-color: $smoke-color;
+            border-radius: 5px;
+
+            &:focus {
+                border: 1px solid $theme-color;
+            }
+
+            .list {
+                color: $white-color;
+                background-color: $theme-color;
+            }
+
+
+            .option {
+                height: 30px;
+                font-weight: 500;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $border-color;
+                }
+            }
+
+            .selected {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &-message {
+        textarea {
+            height: 192px;
+            padding-right: 60px;
+            border-radius: 5px;
+        }
+    }
+
+    &-message-icon {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+    }
+
+    &-input-icon {
+        position: absolute;
+        top: 50%;
+        font-size: 14px;
+        right: 30px;
+        transform: translateY(-50%);
+    }
+
+    &-title {
+        font-weight: 900;
+        font-size: 48px;
+        text-transform: capitalize;
+        color: $title-color;
+
+        @media #{$xs} {
+            font-size: 24px;
+        }
+    }
+
+    &-form-wrapp {
+        padding: 40px;
+        background: $white-color;
+        box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.08);
+        border-radius: 10px;
+
+        @media #{$xs} {
+            padding: 30px 15px;
+        }
+
+        .at-contact-input {
+
+            input,
+            .nice-select {
+                border-radius: 10px;
+                padding-right: 60px;
+            }
+        }
+
+        .at-contact-message {
+            textarea {
+                border-radius: 10px;
+                padding-right: 60px;
+            }
+        }
+
+        .at-btn-primary-text {
+            width: 100%;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+    }
+
+    &-form-title {
+        font-weight: 900;
+        font-size: 36px;
+        text-transform: capitalize;
+        color: $title-color;
+
+        @media #{$xs} {
+            font-size: 24px;
+        }
+    }
+
+    &-info-box {
+        padding: 40px;
+        background: $smoke-color;
+        border-radius: 18px;
+
+        @media #{$lg} {
+            padding: 20px;
+        }
+    }
+
+    &-info-title {
+        font-weight: 900;
+        font-size: 20px;
+        color: $title-color;
+    }
+
+    &-info-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 30px;
+        line-height: 100px;
+        color: $theme-color;
+        border-radius: 1000px;
+        display: inline-block;
+        background-color: $white-color;
+    }
+
+    &-info {
+        font-size: 14px;
+        font-weight: 900;
+        text-transform: capitalize;
+        display: block;
+        text-align: center;
+        color: $body-color;
+        @include at-transition();
+
+        &:hover {
+            color: $theme-color;
+        }
+    }
+
+    &-maps {
+        line-height: 0;
+
+        iframe {
+            width: 100%;
+            border: 0;
+            height: 598px;
+
+            @media #{$md,$sm,$xs} {
+                height: 450px;
+            }
+        }
+    }
+}
+
+.contact-submit-btn {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14.5px 28px;
+    text-transform: uppercase;
+    color: $white-color;
+    background-color: $theme-color;
+    border-radius: 5px;
+}

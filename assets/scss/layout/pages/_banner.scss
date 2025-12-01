@@ -1,0 +1,190 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.2 Banner css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-banner {
+    &-space {
+        margin-top: -35px;
+        padding-bottom: 100px;
+    }
+
+    &-title {
+        font-weight: 900;
+        font-size: 158px;
+        color: $title-color;
+        opacity: 0.4;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+
+        @media #{$xl} {
+            font-size: 120px;
+        }
+
+        @media #{$lg} {
+            font-size: 100px;
+        }
+
+        @media #{$md} {
+            font-size: 85px;
+        }
+
+        @media #{$sm} {
+            font-size: 60px;
+        }
+
+        @media #{$xs} {
+            font-size: 40px;
+        }
+    }
+
+    &-wrapp {
+        height: 100%;
+        justify-content: center;
+        gap: 0;
+    }
+
+    &-thumb {
+        transition: transform 0.5s ease;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-item {
+        width: 640px;
+        transition: transform 0.5s ease;
+
+        @media #{$sm,$xs} {
+            width: 100%;
+        }
+
+        &:nth-child(2) {
+            transform-origin: center;
+            overflow: visible;
+        }
+    }
+
+    &-content {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $theme-color;
+        transition: transform 0.5s ease, font-size 0.5s ease;
+
+        @media #{$lg,$md} {
+            padding: 0 20px;
+        }
+
+        @media #{$sm,$xs} {
+            padding: 40px;
+        }
+    }
+
+    &-content-title {
+        font-weight: 900;
+        font-size: 48px;
+        color: $title-color;
+        white-space: nowrap;
+        transition: font-size 0.5s ease;
+
+        @media #{$xs} {
+            font-size: 24px;
+        }
+    }
+
+    &-hover-sec {
+        &:hover {
+            .at-banner {
+                &-title {
+                    transform: scale(0.5);
+                }
+
+                &-item {
+                    &:first-child {
+                        transform: translateX(-79.5px);
+
+                        @media #{$xxl} {
+                            transform: translateX(-77.5px);
+                        }
+
+                        @media #{$xl} {
+                            transform: translateX(-62.5px);
+                        }
+
+                        @media #{$lg} {
+                            transform: translateX(-52.5px);
+                        }
+
+                        @media #{$md} {
+                            transform: translateX(-42.5px);
+                        }
+
+                        @media #{$sm,$xs} {
+                            transform: translate(0);
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        transform: scaleX(1.25);
+                        overflow: visible;
+                    }
+
+                    &:last-child {
+                        transform: translateX(79.5px);
+
+                        @media #{$xxl} {
+                            transform: translateX(77.5px);
+                        }
+
+                        @media #{$xl} {
+                            transform: translateX(62.5px);
+                        }
+
+                        @media #{$lg} {
+                            transform: translateX(52.5px);
+                        }
+
+                        @media #{$md} {
+                            transform: translateX(42.5px);
+                        }
+
+                        @media #{$sm,$xs} {
+                            transform: translate(0);
+                        }
+                    }
+                }
+
+                &-content {
+                    @media #{$xxl,$xl} {
+                        padding: 0 20px;
+                    }
+                }
+
+                &-content-title {
+                    font-size: 75px;
+
+                    @media #{$xl} {
+                        font-size: 60px;
+                    }
+
+                    @media #{$lg,$sm} {
+                        font-size: 50px;
+                    }
+
+                    @media #{$md} {
+                        font-size: 40px;
+                    }
+
+                    @media #{$xs} {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

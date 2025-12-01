@@ -1,0 +1,41 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.19 Progress-bar css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-progress {
+
+    &-canva {
+        position: relative;
+
+        & canvas {
+            position: relative;
+            z-index: 2;
+        }
+
+        & input {
+            font-size: 36px !important;
+            color: $title-color !important;
+            height: 91px !important;
+            width: 91px !important;
+            right: 60px;
+            bottom: -5px;
+
+            @media #{$xs} {
+                right: 33%;
+            }
+        }
+    }
+
+    &-content {
+        margin-top: -8px;
+    }
+
+    &-title {
+        font-weight: 900;
+        font-size: 16px;
+        text-transform: capitalize;
+        color: $title-color;
+    }
+}

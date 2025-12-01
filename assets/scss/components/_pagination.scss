@@ -1,0 +1,199 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.7 Pagination
+/*----------------------------------------*/
+
+.#{$theme-prefix}-pagination {
+    &-btn {
+        &-icon {
+            @include at-transition();
+
+            i {
+                position: relative;
+                width: 56px;
+                height: 56px;
+                display: inline-block;
+                line-height: 62px;
+                border-radius: 50%;
+                text-align: center;
+                color: $white-color;
+                background: $theme-color;
+
+                &::after {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    content: "";
+                    border: dashed 1.8px $theme-color2;
+                    border-radius: 100%;
+                    transform: scale(1.01);
+                    @include at-transition();
+                }
+
+                span {
+                    position: relative;
+                    font-size: 24px;
+                    width: 24px;
+                    height: 24px;
+                    overflow: hidden;
+                    display: inline-flex;
+
+                    svg {
+                        position: absolute;
+                        bottom: -1px;
+                        left: 1px;
+                        transform: translateY(-2px);
+                        transition: all 0.2s ease-out;
+
+                        &:last-child {
+                            left: -22px;
+                            bottom: 1px;
+                            transform: translate(46px, 0);
+                        }
+                    }
+                }
+
+            }
+
+            &:hover {
+                color: $white-color;
+
+                i {
+                    & svg:first-child {
+                        opacity: 0;
+                        transform: translate(-20px, 0);
+                    }
+
+                    & svg:last-child {
+                        transform: translate(24px, 0);
+                    }
+
+                    &::after {
+                        animation: animation-star 4s cubic-bezier(1, 0.99, 0.03, 0.01) infinite;
+                    }
+                }
+            }
+
+            &.right-icon {
+                i {
+                    color: $white-color;
+                    background: $title-color;
+
+                    &::after {
+                        border-color: $theme-color;
+                    }
+
+                    span {
+
+                        svg {
+                            position: absolute;
+                            bottom: -1px;
+                            left: 1px;
+                            transform: translateY(-2px);
+                            transition: all 0.2s ease-out;
+
+                            &:last-child {
+                                left: -22px;
+                                bottom: 1px;
+                                transform: translate(0, 0);
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    color: $white-color;
+
+                    i {
+                        & svg:first-child {
+                            opacity: 0;
+                            transform: translate(20px, 0);
+                        }
+
+                        & svg:last-child {
+                            transform: translate(23px, 0);
+                        }
+                    }
+                }
+            }
+
+            &.black-arrow {
+                i {
+                    color: $white-color;
+                    background: $title-color;
+
+                    &::after {
+                        border-color: $white-color;
+                    }
+                }
+            }
+            
+            &.blue-arrow {
+                i {
+                    color: $white-color;
+                    background: $theme-color;
+
+                    &::after {
+                        border-color: $white-color;
+                    }
+                }
+            }
+
+            &.yello-icon {
+                i {
+                    background: $theme-color2;
+
+                    &::after {
+                        border-color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &-dot-style {
+        .swiper-pagination-bullet {
+            position: relative;
+            width: 13px;
+            height: 13px;
+            line-height: 13px;
+            opacity: 1;
+            background: $theme-color;
+            border-radius: 100px;
+            margin: 0 8px !important;
+
+            &::before {
+                position: absolute;
+                width: 27px;
+                height: 27px;
+                left: -7px;
+                top: -7px;
+                line-height: 27px;
+                border-radius: 100px;
+                content: "";
+                border: 2px solid $theme-color;
+                transform: scale(.5);
+                @include at-transition();
+            }
+
+            &.swiper-pagination-bullet-active {
+                &::before {
+                    transform: scale(1);
+                }
+            }
+        }
+
+    }
+}
+
+.slide-transtion {
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+
+    & .swiper-slide {
+        width: auto;
+    }
+}

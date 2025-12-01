@@ -1,0 +1,521 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.13 Hero css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-hero {
+    &-inner1 {
+        padding-top: 283px;
+        padding-bottom: 120px;
+
+        @media #{$lg,$md} {
+            padding-top: 180px;
+            padding-bottom: 0;
+        }
+
+        @media #{$sm} {
+            padding-top: 150px;
+            padding-bottom: 0;
+        }
+
+        @media #{$xs} {
+            padding-top: 120px;
+            padding-bottom: 0;
+        }
+    }
+
+    &-subtitle {
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: $theme-color;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    &-subtitle-icon {
+        margin-right: 5px;
+    }
+
+    &-title {
+        font-size: 70px;
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: .03em;
+        text-transform: capitalize;
+        color: $title-color;
+
+        @media #{$xl} {
+            font-size: 65px;
+        }
+
+        @media #{$lg} {
+            font-size: 60px;
+        }
+
+        @media #{$md,$sm} {
+            font-size: 50px;
+        }
+
+        @media #{$xs} {
+            font-size: 30px;
+        }
+    }
+
+    &-titlebox {
+        .at-sec-text {
+            font-weight: 600;
+            font-size: $font-p1;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+    }
+
+    &-content {
+        max-width: 578px;
+
+        @media #{$lg,$md,$sm,$xs} {
+            margin: auto;
+        }
+    }
+
+    &-thumb {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+
+        @media #{$lg,$md,$sm,$xs} {
+            position: relative;
+        }
+    }
+
+    &-arrow-shape {
+        position: absolute;
+        top: 12%;
+        left: 17%;
+        z-index: -1;
+        animation: atleftRight 1s infinite alternate;
+
+        @media #{$xs} {
+            left: 0;
+        }
+    }
+
+    &-blue-shape {
+        position: absolute;
+        top: 29.5%;
+        left: -20%;
+        z-index: -1;
+
+        @media #{$xl} {
+            top: 27.5%;
+            left: -15%;
+        }
+    }
+
+    &-yellow-shape {
+        position: absolute;
+        top: 12.5%;
+        right: 1%;
+        z-index: -2;
+    }
+
+    &-sune-shape {
+        position: absolute;
+        top: 32%;
+        right: -9.5%;
+        z-index: -2;
+        animation: jumpTwo 2s linear infinite;
+
+        @media #{$xl} {
+            right: 0;
+        }
+    }
+
+    &-shape {
+        position: absolute;
+        bottom: 14.5%;
+        left: 4.1%;
+        animation: jumpTwo 2s linear infinite;
+    }
+
+    &-newsletter {
+        .at-newsletter {
+            &-box {
+                .at-btn-box-primary {
+                    @media #{$xs} {
+                        position: static;
+                    }
+                }
+            }
+
+            &-input {
+                @media #{$xs} {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    &-brandbox {
+        @media #{$xs} {
+            margin-bottom: 10px;
+        }
+    }
+
+    // style-2 here
+
+    &-inner2 {
+        padding-top: 215px;
+
+        @media #{$lg,$sm} {
+            padding-top: 150px;
+        }
+
+        @media #{$md} {
+            padding-top: 150px;
+        }
+
+        @media #{$xs} {
+            padding-top: 120px;
+        }
+    }
+
+    &-titlebox2 {
+        @media #{$sm,$xs} {
+            margin-bottom: 50px;
+        }
+
+        .at-hero-title {
+            font-size: 90px;
+            line-height: .9;
+            font-weight: 700;
+            text-transform: inherit;
+
+            @media #{$xl} {
+                font-size: 75px;
+            }
+
+            @media #{$lg,$md,$sm,$xs} {
+                font-size: 60px;
+                margin-bottom: 40px;
+            }
+
+            @media #{$md} {
+                font-size: 65px;
+            }
+
+            @media #{$sm} {
+                font-size: 55px;
+            }
+
+            @media #{$xs} {
+                font-size: 30px;
+            }
+        }
+
+        .at-sec-text2 {
+            max-width: 317px;
+            font-weight: 600;
+            line-height: 1.7;
+            text-transform: inherit;
+            margin-top: -10px;
+
+            @media #{$lg,$md,$sm,$xs} {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &-explore {
+        .at-btn-text-box {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .at-btn-icon {
+            i span {
+                top: -5px;
+                left: 3px;
+            }
+        }
+    }
+
+    &-circle-box {
+        @media #{$lg,$sm,$xs} {
+            margin-bottom: 50px;
+        }
+
+        .at-circle-text {
+            font-size: 18px;
+            font-weight: 700;
+
+            span {
+                --rotate-letter: 11deg;
+                min-height: 77px;
+                position: absolute;
+                min-width: 77px;
+                top: 6px;
+            }
+        }
+
+        .at-circle-icon {
+            background: none;
+        }
+    }
+
+    &-play-btn {
+        display: inline-block;
+    }
+
+    &-play-icon {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        transform: translateY(-50%);
+
+        i {
+            font-size: 16px;
+            width: 56px;
+            height: 56px;
+            line-height: 56px;
+            color: $white-color;
+            text-align: center;
+            border-radius: 100px;
+            background: #FF6633;
+        }
+    }
+
+    &-circle {
+        &-wrapp {
+            flex: 0 0 auto;
+
+            .at-circle-text-wrapp {
+                @media #{$xs} {
+                    margin: auto;
+                }
+            }
+        }
+
+        &-dsc-title {
+            font-weight: 900;
+            font-size: 30px;
+            color: $title-color;
+        }
+    }
+
+    &-content-left {
+        gap: 45px;
+
+        @media #{$sm,$xs} {
+            margin-bottom: 20px;
+        }
+    }
+
+    &-content-right {
+        @media #{$sm,$xs} {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &-left-thumb {
+        img {
+            border-radius: 10px 10px 0 0;
+
+            @media #{$md,$sm,$xs} {
+                border-radius: 10px;
+                width: 100%;
+            }
+        }
+    }
+
+    &-right-thumb {
+        animation: img-anim-top 1.7s forwards cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        @media #{$xl,$lg,$sm,$xs} {
+            margin-bottom: 25px;
+        }
+
+        @media #{$md} {
+            margin-bottom: 0;
+        }
+
+        img {
+            border-radius: 10px;
+
+            @media #{$lg,$md} {
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+            }
+
+            @media #{$sm,$xs} {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    &-user-box {
+        @media #{$sm,$xs} {
+            margin-bottom: 15px;
+        }
+
+        .at-funfact-number {
+            font-weight: 600;
+            font-size: 18px;
+            color: $black-color;
+        }
+    }
+
+    &-shape-top {
+        position: absolute;
+        top: 106px;
+        left: 0;
+        z-index: -1;
+
+        @media #{$lg,$md,$sm,$xs} {
+            top: 0;
+        }
+    }
+
+    &-shape-bottom {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    // style-3
+
+    &-3-height{
+        min-height: 1150px;
+    }
+
+    &-inner3 {
+        padding-top: 240px;
+        padding-bottom: 0;
+
+        @media #{$lg,$md} {
+            padding-top: 180px;
+            padding-bottom: 0;
+        }
+
+        @media #{$sm} {
+            padding-top: 150px;
+            padding-bottom: 0;
+        }
+
+        @media #{$xs} {
+            padding-top: 120px;
+            padding-bottom: 0;
+        }
+    }
+
+    &-thumb3{
+        z-index: 1;
+        left: 20px;
+        &::before{
+            position: absolute;
+            width: 414px;
+            height: 414px;
+            top: 0;
+            left: 10px;
+            right: 0;
+            text-align: center;
+            margin: auto;
+            content: "";
+            border-radius: 100%;
+            background: $theme-color;
+            z-index: -1;
+        }
+
+        &::after{
+            position: absolute;
+            width: 469px;
+            height: 469px;
+            top: -27px;
+            left: 10px;
+            right: 0;
+            margin: auto;
+            content: "";
+            border: 1px solid $theme-color;
+            border-radius: 100%;
+            z-index: -1;
+        }
+    }
+
+    &-3-left-shapbox{
+        height: 380px;
+    }
+    &-3-right-shapbox{
+        height: 335px;
+    }
+}
+
+.at-user {
+    &-imgbox {
+        @media #{$xs} {
+            margin-bottom: 15px;
+        }
+    }
+
+    &-img {
+        margin-right: -12px;
+        overflow: hidden;
+
+        img {
+            width: 61px;
+            height: 61px;
+            object-fit: cover;
+            border-radius: 1000px;
+            border: 3px solid $white-color;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &-count {
+        position: relative;
+        width: 61px;
+        height: 61px;
+        font-weight: 900;
+        font-size: 20px;
+        text-align: center;
+        line-height: 61px;
+        color: $white-color;
+        border-radius: 1000px;
+        z-index: 2;
+
+        &::before {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            content: "";
+            border: 3px solid $white-color;
+            background-color: $title-color;
+            border-radius: 1000px;
+            z-index: -1;
+        }
+    }
+
+    &-icon {
+        color: $theme-color2;
+    }
+
+    &-box-2 {
+        .at-user-img {
+            margin-right: -30px;
+
+            img {
+                box-shadow: none;
+            }
+        }
+    }
+}

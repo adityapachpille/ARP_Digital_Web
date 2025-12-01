@@ -1,0 +1,43 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.5 Background
+/*----------------------------------------*/
+.theme-bg {
+	background-color: $theme-color;
+}
+
+.theme-bg2 {
+	background-color: $theme-color2;
+}
+
+.smock-bg {
+	background-color: $smoke-color;
+}
+
+.smock-bg2 {
+	background-color: $smoke-color2;
+}
+
+.white-bg {
+	background-color: $white-color;
+}
+
+.black-bg {
+	background-color: $black-color;
+}
+
+.black-bg2 {
+	background-color: $black-color2;
+}
+
+.black-bg3 {
+	background-color: $title-color;
+}
+.black-bg4 {
+	background-color: $black-color3;
+}
+
+.grey-bg {
+	background-color: $smoke-color;
+}

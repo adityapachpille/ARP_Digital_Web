@@ -1,0 +1,259 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.2 Header Style 2
+/*----------------------------------------*/
+
+.#{$theme-prefix}-header {
+    &-layout2 {
+        .at-btn-primary-text {
+            font-weight: 700;
+            padding: 17.5px 25.2px;
+        }
+
+        .at-main-menu {
+            >nav {
+                >ul {
+                    >li {
+                        &:not(:last-child) {
+                            margin-right: 18px;
+                            padding-right: 18px;
+
+                            @media #{$xxl} {
+                                margin-right: 10px;
+                                padding-right: 10px;
+                            }
+
+                            @media #{$xl} {
+                                margin-right: 9px;
+                                padding-right: 9px;
+                            }
+                        }
+
+                        &.has-dropdown::after {
+                            top: 45px;
+
+                            @media #{$xxl,$xl} {
+                                right: 0;
+                            }
+                        }
+
+                        a {
+                            padding: 45px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .at-header-right-bars {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: var(--at-theme-color);
+            color: #fff;
+            border-radius: 100px;
+        }
+
+        .at-header-bottom {
+            background: $white-color;
+
+            @media #{$lg,$md,$sm,$xs} {
+                padding: 10px 0;
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                width: 664px;
+                height: 100%;
+                left: 0;
+                top: 0;
+                content: "";
+                background: $theme-color;
+                clip-path: polygon(0 0, 86% 0, 100% 100%, 0% 100%);
+                z-index: 2;
+
+                @media #{$x6l} {
+                    width: 950px;
+                }
+
+                @media #{$x5l} {
+                    width: 860px;
+                }
+
+                @media #{$x4l} {
+                    width: 545px;
+                }
+
+                @media #{$x3l} {
+                    width: 426px;
+                }
+
+                @media #{$xxl} {
+                    width: 360px;
+                }
+
+                @media #{$xl,$lg,$md} {
+                    width: 320px;
+                }
+
+                @media #{$sm} {
+                    width: 275px;
+                }
+
+                @media #{$xs} {
+                    width: 250px;
+                }
+            }
+
+            &::after {
+                width: 680px;
+                z-index: 1;
+                background: $theme-color2;
+                clip-path: polygon(0 0, 86% 0, 97.7% 100%, 0% 100%);
+
+                @media #{$x6l} {
+                    width: 975px;
+                }
+
+                @media #{$x5l} {
+                    width: 883px;
+                }
+
+                @media #{$x4l} {
+                    width: 560px;
+                }
+
+                @media #{$x3l} {
+                    width: 440px;
+                }
+
+                @media #{$xxl} {
+                    width: 370px;
+                }
+
+                @media #{$xl,$lg,$md} {
+                    width: 329px;
+                }
+
+                @media #{$sm} {
+                    width: 283px;
+                }
+
+                @media #{$xs} {
+                    width: 257px;
+                }
+            }
+
+            &.header-sticky {
+                padding: 0;
+
+                .at-main-menu {
+                    >nav {
+                        >ul {
+
+                            >li {
+                                &.has-dropdown::after {
+                                    top: 30px;
+                                }
+
+                                a {
+                                    padding: 30px 0;
+                                }
+
+                                >.at-submenu {
+                                    >li {
+                                        >a {
+                                            padding: 0;
+                                            &:hover{
+                                                padding-left: 30px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .at-search-icon {
+            width: auto;
+            height: auto;
+            background: none;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &-right-btn {
+        height: 100px;
+        padding-left: 54px;
+        margin-left: 54px;
+
+        &::after {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            content: "";
+            background: #a2cd00;
+        }
+    }
+
+    &-info-text {
+        font-weight: 500;
+        font-size: 15px;
+        color: $title-color;
+
+        img {
+            filter: brightness(0) contrast(1);
+        }
+    }
+
+    &-info-link {
+        font-weight: 900;
+        color: $border-color;
+
+        &:not(:last-child) {
+            position: relative;
+            margin-right: 14px;
+            padding-right: 14px;
+
+            &::after {
+                position: absolute;
+                width: 3px;
+                height: 18.5px;
+                right: 0;
+                top: 0;
+                content: "";
+                background: rgba($color: #d8dde1, $alpha: .7);
+            }
+        }
+
+
+        i {
+            margin-right: 8px;
+        }
+    }
+
+    &-info-social {
+        padding: 11px 29px;
+        display: inline-flex;
+        background: $theme-color2;
+        border-radius: 10px 10px 0 0;
+
+        &-link {
+            color: $title-color;
+
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+    }
+}

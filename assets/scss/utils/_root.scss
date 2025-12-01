@@ -1,0 +1,38 @@
+@use 'typography' as *;
+
+:root {
+
+    /**
+    @font family declaration
+    */
+    --at-title-font          : "DM Sans", sans-serif; 
+    --at-body-font           : "DM Sans", sans-serif; 
+    --at-style-font          : "DM Sans", sans-serif;
+    --at-icon-font           : "Font Awesome 6 Pro";  
+
+    --at-paragraph1          : 18px;
+    --at-paragraph2          : 16px;
+    --at-paragraph3          : 14px;
+
+    /**
+    @ripple declaration
+    */
+    --at-ripple-ani-duration : 2s;
+
+    /**
+    @color declaration
+    */
+    --at-theme-color         : #3747FF;
+    --at-theme-color2        : #F6B800;
+    --at-title-color         : #0C2226;
+    --at-title-color2        : #04223E;
+    --at-body-color          : #696868;  
+    --at-white-color         : #FFFFFF;
+    --at-smoke-color         : #EBEDFF;  
+    --at-smoke-color2        : #FFFBEE;
+    --at-border-color        : #D8DDE1;
+    --at-black-color         : #000000;
+    --at-black-color2        : #1C252F;
+    --at-black-color3        : #1C252E;
+    --at-placeholder-color   : #555c6a;
+}

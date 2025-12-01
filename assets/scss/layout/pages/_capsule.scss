@@ -1,0 +1,52 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.4 Capsule css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-capsule {
+    &-wrapp {
+        position: relative;
+        height: 100%;
+        pointer-events: auto;
+
+        @media #{$xs} {
+            margin-right: 0;
+        }
+
+        &>.at-capsule-item-wrapp {
+            &>p {
+                position: absolute;
+                display: inline-block;
+                margin-bottom: 0;
+                left: 0;
+                top: 0;
+                user-select: none;
+                pointer-events: auto;
+                transition: none;
+
+                & img {
+                    transition: none;
+                    padding-bottom: 10px;
+                }
+
+            }
+        }
+    }
+
+    &-item {
+        display: inline-block;
+        font-size: 18px;
+        color: $white-color;
+        font-weight: 700;
+        border-radius: 100px;
+        padding: 10px 26px;
+        background: $theme-color;
+        text-transform: uppercase;
+        @include at-transform(translate(-50%, -50%) rotate(0.01rad));
+        @media #{$xs} {
+            padding: 10px;
+        }
+    }
+
+}

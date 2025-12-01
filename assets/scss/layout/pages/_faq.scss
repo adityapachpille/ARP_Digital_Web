@@ -1,0 +1,156 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.11 Faq css
+/*----------------------------------------*/
+
+.#{$theme-prefix}-faq {
+    &-banner {
+        border-radius: 10px;
+    }
+
+    &-banner-thumb {
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    &-banner-content {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        right: 50px;
+
+        @media #{$sm,$xs} {
+            left: 20px;
+            right: 20px;
+        }
+    }
+
+    &-banner-title {
+        font-weight: 900;
+        font-size: 36px;
+        text-transform: capitalize;
+        @media #{$sm} {
+            font-size: 30px;
+        }
+        @media #{$xs} {
+            font-size: 24px;
+        }
+    }
+
+    &-info {
+        padding: 40px 30px 30px 40px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        @media #{$xs} {
+            padding: 30px 15px 30px 15px;
+        }
+    }
+
+    &-info-list {
+        a {
+            color: $smoke-color;
+            margin-bottom: 0;
+
+            img {
+                margin-right: 8px;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 11px;
+        }
+    }
+
+    &-info-icon {
+        width: 64px;
+        height: 64px;
+        line-height: 64px;
+        text-align: center;
+        background: $theme-color2;
+        border-radius: 100px;
+        margin-top: -13px;
+    }
+
+    // style-2 here
+    &-accordion-2 {
+        @media #{$md,$sm,$xs} {
+            margin-bottom: 40px;
+        }
+    }
+
+    &-sidebar2 {
+        .at-faq-banner-thumb {
+            @media #{$md,$sm,$xs} {
+                text-align: center;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &-banner-bg {
+        position: absolute;
+        bottom: -9px;
+        z-index: -1;
+
+        @media #{$md,$sm,$xs} {
+            text-align: center;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    &-banner-thumb {
+        @media #{$md,$sm,$xs} {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        img {
+            width: 100%;
+
+            @media #{$md,$sm,$xs} {
+                width: auto;
+            }
+        }
+    }
+
+    &-funfact-style {
+        position: absolute;
+        top: 47%;
+        left: 0;
+        right: 33px;
+        transform: translateY(-50%);
+
+        .at-funfact-title {
+            font-size: 64px;
+            line-height: 1;
+            color: $theme-color2;
+            margin-bottom: 0;
+        }
+
+        .at-sec-text {
+            line-height: 1;
+            margin-bottom: 0;
+        }
+    }
+
+    &-contact {
+        .at-sec-text {
+            a {
+                color: $theme-color;
+                @include at-transition();
+
+                &:hover {
+                    color: $theme-color2;
+                }
+            }
+        }
+    }
+}
