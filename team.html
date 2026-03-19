@@ -76,7 +76,7 @@
 }
 
 .founder-subtitle{
-  color:#ff2c8f;
+  color:#081653;
   font-weight:600;
 }
 
@@ -92,10 +92,46 @@
 
 blockquote{
   font-style:italic;
-  border-left:4px solid #ff2c8f;
+  border-left:4px solid #081653;
   padding-left:15px;
   margin:20px 0;
 }
+      @media (max-width: 768px) {
+  .founder-wrapper {
+    flex-direction: column;
+    text-align: left;
+    gap: 20px;
+  }
+
+  /* Remove top image behavior */
+  .founder-image {
+    order: 0; /* normal flow */
+    width: 100%;
+  }
+
+  /* Full width image */
+  .founder-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .founder-title {
+    font-size: 24px;
+  }
+
+  .founder-content p {
+    font-size: 15px;
+  }
+  .founder-content {
+    text-align: justify;
+}
+
+  blockquote {
+    font-size: 14px;
+  }
+}
+
 
 </style>
 
