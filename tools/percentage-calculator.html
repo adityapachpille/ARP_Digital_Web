@@ -1,1 +1,62 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Percentage Calculator Online | Calculate Percentage Easily</title>
+<meta name="description" content="Free percentage calculator to calculate percentage increase, decrease and percentage of numbers instantly.">
+<meta name="keywords" content="percentage calculator, calculate percentage online, percentage increase calculator, percentage decrease">
+
+<style>
+body { font-family: Arial; background:#f4f7fb; margin:0; }
+.container { max-width:700px; margin:40px auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+h1{text-align:center;}
+input,button{width:96%;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc;}
+button{background:#007bff;color:#fff;border:none;font-weight:bold;}
+.result{margin-top:20px;padding:15px;background:#f1f6ff;border-radius:8px;}
+.seo-content{margin-top:30px;border-top:1px solid #eee;padding-top:20px;}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Percentage Calculator</h1>
+
+<input type="number" id="num1" placeholder="Enter Number">
+<input type="number" id="num2" placeholder="Enter Percentage">
+
+<button onclick="calculatePercentage()">Calculate</button>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<div class="seo-content">
+<h2>What is Percentage?</h2>
+<p>Percentage is a number expressed as a fraction of 100. It is widely used in maths, business, and daily calculations.</p>
+
+<h2>How to Calculate Percentage?</h2>
+<p>To calculate percentage, multiply the number by the percentage and divide by 100. This tool makes it simple and fast.</p>
+
+<h2>Uses of Percentage Calculator</h2>
+<p>This percentage calculator helps in calculating discounts, marks, profit/loss, and financial calculations easily.</p>
+</div>
+
+</div>
+
+<script>
+function calculatePercentage(){
+let num=document.getElementById("num1").value;
+let per=document.getElementById("num2").value;
+
+if(!num||!per){alert("Fill all fields");return;}
+
+let result=(num*per)/100;
+
+document.getElementById("result").style.display="block";
+document.getElementById("result").innerHTML=`Result: ${result}`;
+}
+</script>
+
+</body>
+</html>
