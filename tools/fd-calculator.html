@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>FD Calculator Online | Fixed Deposit Interest Calculator India</title>
+<meta name="description" content="Free FD calculator India to calculate fixed deposit interest and maturity amount instantly.">
+<meta name="keywords" content="fd calculator india, fixed deposit calculator, fd interest calculator, maturity calculator">
+
+<style>
+body{font-family:Arial;background:#f4f7fb;margin:0;}
+.container{max-width:700px;margin:40px auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.1);}
+h1{text-align:center;}
+input,button{width:96%;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc;}
+button{background:#007bff;color:#fff;border:none;font-weight:bold;}
+.result{margin-top:20px;padding:15px;background:#f1f6ff;border-radius:8px;}
+.seo-content{margin-top:30px;border-top:1px solid #eee;padding-top:20px;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>FD Calculator</h1>
+
+<input type="number" id="principal" placeholder="Deposit Amount">
+<input type="number" id="rate" placeholder="Interest Rate (%)">
+<input type="number" id="time" placeholder="Time (Years)">
+
+<button onclick="calcFD()">Calculate FD</button>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<div class="seo-content">
+<h2>What is Fixed Deposit (FD)?</h2>
+<p>Fixed Deposit is a safe investment option where you deposit money for a fixed period and earn interest.</p>
+
+<h2>How FD Calculator Works?</h2>
+<p>This FD calculator uses compound interest formula to calculate maturity amount and interest earned.</p>
+
+<h2>Benefits of FD</h2>
+<p>FD provides stable returns, low risk, and guaranteed income, making it popular in India.</p>
+</div>
+
+</div>
+
+<script>
+function calcFD(){
+let p=document.getElementById("principal").value;
+let r=document.getElementById("rate").value/100;
+let t=document.getElementById("time").value;
+
+if(!p||!r||!t){alert("Fill all fields");return;}
+
+let maturity=p*Math.pow((1+r),t);
+let interest=maturity-p;
+
+document.getElementById("result").style.display="block";
+document.getElementById("result").innerHTML=
+`Maturity Amount: ₹${maturity.toLocaleString('en-IN')}<br>
+Interest Earned: ₹${interest.toLocaleString('en-IN')}`;
+}
+</script>
+
+</body>
+</html>
