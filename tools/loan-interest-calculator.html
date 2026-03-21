@@ -1,1 +1,66 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Loan Interest Calculator | Calculate Interest Online</title>
+<meta name="description" content="Free loan interest calculator to calculate total interest and payment on your loan instantly.">
+<meta name="keywords" content="loan interest calculator, simple interest calculator, interest calculator india, calculate interest online">
+
+<style>
+body{font-family:Arial;background:#f4f7fb;margin:0;}
+.container{max-width:700px;margin:40px auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.1);}
+h1{text-align:center;}
+input,button{width:96%;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc;}
+button{background:#007bff;color:#fff;border:none;font-weight:bold;}
+.result{margin-top:20px;padding:15px;background:#f1f6ff;border-radius:8px;}
+.seo-content{margin-top:30px;border-top:1px solid #eee;padding-top:20px;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Loan Interest Calculator</h1>
+
+<input type="number" id="principal" placeholder="Loan Amount">
+<input type="number" id="rate" placeholder="Interest Rate (%)">
+<input type="number" id="time" placeholder="Time (Years)">
+
+<button onclick="calcInterest()">Calculate</button>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<div class="seo-content">
+<h2>What is Loan Interest?</h2>
+<p>Loan interest is the cost you pay for borrowing money from a bank or lender.</p>
+
+<h2>How to Calculate Interest?</h2>
+<p>Interest is calculated using the formula: Principal × Rate × Time / 100. This calculator makes it easy.</p>
+
+<h2>Why Use This Calculator?</h2>
+<p>This tool helps you plan loans better by calculating total interest and final payment.</p>
+</div>
+
+</div>
+
+<script>
+function calcInterest(){
+let p=document.getElementById("principal").value;
+let r=document.getElementById("rate").value;
+let t=document.getElementById("time").value;
+
+if(!p||!r||!t){alert("Fill all fields");return;}
+
+let interest=(p*r*t)/100;
+let total=Number(p)+interest;
+
+document.getElementById("result").style.display="block";
+document.getElementById("result").innerHTML=`Interest: ₹${interest}<br>Total Amount: ₹${total}`;
+}
+</script>
+
+</body>
+</html>
