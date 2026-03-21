@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Simple Interest Calculator | Calculate Interest Easily</title>
+<meta name="description" content="Free simple interest calculator to calculate interest and total amount instantly.">
+<meta name="keywords" content="simple interest calculator, interest calculator, si calculator, calculate interest">
+
+<style>
+body{font-family:Arial;background:#f4f7fb;margin:0;}
+.container{max-width:700px;margin:40px auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.1);}
+h1{text-align:center;}
+input,button{width:96%;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc;}
+button{background:#007bff;color:#fff;border:none;font-weight:bold;}
+.result{margin-top:20px;padding:15px;background:#f1f6ff;border-radius:8px;}
+.seo-content{margin-top:30px;border-top:1px solid #eee;padding-top:20px;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Simple Interest Calculator</h1>
+
+<input type="number" id="p" placeholder="Principal Amount">
+<input type="number" id="r" placeholder="Rate (%)">
+<input type="number" id="t" placeholder="Time (Years)">
+
+<button onclick="calcSI()">Calculate</button>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<div class="seo-content">
+<h2>What is Simple Interest?</h2>
+<p>Simple interest is calculated only on the principal amount for a fixed period.</p>
+
+<h2>Formula of Simple Interest</h2>
+<p>SI = (Principal × Rate × Time) / 100</p>
+
+<h2>Uses of Simple Interest</h2>
+<p>This calculator is useful for loans, savings, and basic financial planning.</p>
+</div>
+
+</div>
+
+<script>
+function calcSI(){
+let p=document.getElementById("p").value;
+let r=document.getElementById("r").value;
+let t=document.getElementById("t").value;
+
+if(!p||!r||!t){alert("Fill all fields");return;}
+
+let si=(p*r*t)/100;
+let total=Number(p)+si;
+
+document.getElementById("result").style.display="block";
+document.getElementById("result").innerHTML=
+`Interest: ₹${si.toLocaleString('en-IN')}<br>
+Total Amount: ₹${total.toLocaleString('en-IN')}`;
+}
+</script>
+
+</body>
+</html>
