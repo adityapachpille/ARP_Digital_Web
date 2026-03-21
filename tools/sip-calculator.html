@@ -1,1 +1,149 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO TITLE -->
+<title>SIP Calculator Online India | Calculate Mutual Fund Returns</title>
+
+<!-- SEO META -->
+<meta name="description" content="Free SIP calculator India to calculate mutual fund returns. Check monthly investment growth, total returns and wealth gained instantly.">
+<meta name="keywords" content="sip calculator india, mutual fund sip calculator, sip return calculator, investment calculator india, monthly sip calculator">
+
+<style>
+body{font-family:Arial;background:#f4f7fb;margin:0;}
+.container{max-width:750px;margin:40px auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.1);}
+h1{text-align:center;color:#333;}
+
+label{font-weight:bold;margin-top:10px;display:block;}
+
+input,button{
+width:96%;
+padding:12px;
+margin-top:10px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+button{
+background:#007bff;
+color:#fff;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{background:#0056b3;}
+
+.result{
+margin-top:20px;
+padding:15px;
+background:#f1f6ff;
+border-radius:8px;
+line-height:1.7;
+}
+
+.highlight{color:#007bff;font-weight:bold;}
+
+.seo-content{
+margin-top:30px;
+padding-top:20px;
+border-top:1px solid #eee;
+}
+
+@media(max-width:600px){
+.container{margin:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Free SIP Calculator Online</h1>
+
+<label>Monthly Investment (₹):</label>
+<input type="text" id="monthly" placeholder="e.g. 10,000" oninput="formatNumber(this)">
+
+<label>Expected Return Rate (% per year):</label>
+<input type="number" id="rate" placeholder="e.g. 12">
+
+<label>Investment Duration (Years):</label>
+<input type="number" id="time" placeholder="e.g. 10">
+
+<button onclick="calculateSIP()">Calculate SIP</button>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<!-- SEO CONTENT -->
+<div class="seo-content">
+
+<h2>What is SIP Calculator?</h2>
+<p>
+A SIP (Systematic Investment Plan) calculator helps you estimate the future value of your monthly investments in mutual funds. 
+It is widely used in India to plan long-term wealth creation.
+</p>
+
+<h2>How SIP Calculator Works?</h2>
+<p>
+The SIP calculator uses compound interest formula to calculate your returns based on monthly investment, expected return rate, and time period.
+It gives you an estimate of your total investment and wealth gained.
+</p>
+
+<h2>Benefits of SIP Investment</h2>
+<p>
+SIP helps you invest small amounts regularly, reduce risk, and build wealth over time. 
+It is one of the best investment options for long-term financial goals.
+</p>
+
+<h2>Why Use This SIP Calculator?</h2>
+<p>
+This free SIP calculator India is easy to use, accurate, and helps you plan your mutual fund investments efficiently.
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+// FORMAT INPUT (10,000)
+function formatNumber(input){
+let value=input.value.replace(/,/g,'');
+if(!isNaN(value)){
+input.value=Number(value).toLocaleString('en-IN');
+}
+}
+
+// CALCULATION
+function calculateSIP(){
+let m=document.getElementById("monthly").value.replace(/,/g,'');
+let r=document.getElementById("rate").value/100/12;
+let n=document.getElementById("time").value*12;
+
+if(!m||!r||!n){
+alert("Please fill all fields");
+return;
+}
+
+let invested=m*n;
+let future=m*((Math.pow(1+r,n)-1)/r)*(1+r);
+let gain=future-invested;
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("result").innerHTML=`
+<p><span class="highlight">Monthly Investment:</span> ₹${Number(m).toLocaleString('en-IN')}</p>
+<p><span class="highlight">Total Investment:</span> ₹${invested.toLocaleString('en-IN')}</p>
+<p><span class="highlight">Estimated Returns:</span> ₹${gain.toLocaleString('en-IN')}</p>
+<p><span class="highlight">Total Value:</span> ₹${future.toLocaleString('en-IN')}</p>
+`;
+}
+
+</script>
+
+</body>
+</html>
