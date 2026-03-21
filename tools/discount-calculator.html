@@ -1,1 +1,64 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Discount Calculator Online | Calculate Price After Discount</title>
+<meta name="description" content="Free discount calculator to calculate sale price and savings. Find final price after discount instantly.">
+<meta name="keywords" content="discount calculator, sale price calculator, percentage discount calculator, calculate discount online">
+
+<style>
+body{font-family:Arial;background:#f4f7fb;margin:0;}
+.container{max-width:700px;margin:40px auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.1);}
+h1{text-align:center;}
+input,button{width:96%;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc;}
+button{background:#007bff;color:#fff;border:none;font-weight:bold;}
+.result{margin-top:20px;padding:15px;background:#f1f6ff;border-radius:8px;}
+.seo-content{margin-top:30px;border-top:1px solid #eee;padding-top:20px;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Discount Calculator</h1>
+
+<input type="number" id="price" placeholder="Original Price">
+<input type="number" id="discount" placeholder="Discount %">
+
+<button onclick="calcDiscount()">Calculate Discount</button>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<div class="seo-content">
+<h2>What is Discount?</h2>
+<p>A discount is a reduction in price offered on products or services. It is commonly used in sales and promotions.</p>
+
+<h2>How to Calculate Discount?</h2>
+<p>Discount is calculated by multiplying the original price by the discount percentage and subtracting it from the original price.</p>
+
+<h2>Why Use Discount Calculator?</h2>
+<p>This tool helps you quickly calculate final price after discount and how much you save.</p>
+</div>
+
+</div>
+
+<script>
+function calcDiscount(){
+let price=document.getElementById("price").value;
+let discount=document.getElementById("discount").value;
+
+if(!price||!discount){alert("Fill all fields");return;}
+
+let save=(price*discount)/100;
+let final=price-save;
+
+document.getElementById("result").style.display="block";
+document.getElementById("result").innerHTML=`Final Price: ₹${final.toFixed(2)}<br>You Save: ₹${save.toFixed(2)}`;
+}
+</script>
+
+</body>
+</html>
