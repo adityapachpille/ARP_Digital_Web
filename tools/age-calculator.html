@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Age Calculator (From Date to Date) | Free DOB Calculator</title>
+
+  <meta name="description" content="Calculate age from date of birth to any date. Find age in years, months, days, hours, minutes and seconds instantly.">
+  <meta name="keywords" content="age calculator from to date, dob calculator, age between two dates, exact age calculator, age calculator india">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input, button {
+      width: 97%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f1f6ff;
+      border-radius: 8px;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Age Calculator</h1>
+
+  <label>Date of Birth (From):</label>
+  <input type="date" id="fromDate">
+
+  <label>Age at Date (To):</label>
+  <input type="date" id="toDate">
+
+  <button onclick="setToday()">Use Today</button>
+  <button onclick="calculateAge()">Calculate Age</button>
+
+  <div id="result" class="result" style="display:none;"></div>
+
+</div>
+
+<script>
+function setToday() {
+  const today = new Date().toISOString().split("T")[0];
+  document.getElementById("toDate").value = today;
+}
+
+function calculateAge() {
+  const from = document.getElementById("fromDate").value;
+  const to = document.getElementById("toDate").value;
+
+  if (!from || !to) {
+    alert("Please select both dates");
+    return;
+  }
+
+  const dob = new Date(from);
+  const end = new Date(to);
+
+  let years = end.getFullYear() - dob.getFullYear();
+  let months = end.getMonth() - dob.getMonth();
+  let days = end.getDate() - dob.getDate();
+
+  if (days < 0) {
+    months--;
+    days += new Date(end.getFullYear(), end.getMonth(), 0).getDate();
+  }
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  const diffTime = end - dob;
+
+  const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  const totalWeeks = Math.floor(totalDays / 7);
+  const totalMonths = years * 12 + months;
+  const totalHours = totalDays * 24;
+  const totalMinutes = totalHours * 60;
+  const totalSeconds = totalMinutes * 60;
+
+  document.getElementById("result").style.display = "block";
+
+  document.getElementById("result").innerHTML = `
+    <p><span class="highlight">Age:</span><br>
+    ${years} years ${months} months ${days} days</p>
+
+    <p>${totalMonths} months ${days} days</p>
+    <p>${totalWeeks} weeks ${days} days</p>
+    <p>${totalDays.toLocaleString()} days</p>
+    <p>${totalHours.toLocaleString()} hours</p>
+    <p>${totalMinutes.toLocaleString()} minutes</p>
+    <p>${totalSeconds.toLocaleString()} seconds</p>
+  `;
+}
+</script>
+
+</body>
+</html>
