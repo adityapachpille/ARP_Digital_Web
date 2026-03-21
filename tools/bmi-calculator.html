@@ -1,1 +1,83 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BMI Calculator with Age & Gender | Check Body Mass Index</title>
+<meta name="description" content="Advanced BMI calculator with age and gender. Check your body mass index and health status instantly.">
+<meta name="keywords" content="bmi calculator with age, bmi calculator india, body mass index calculator, bmi with gender">
+
+<style>
+body{font-family:Arial;background:#f4f7fb;margin:0;}
+.container{max-width:700px;margin:40px auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.1);}
+h1{text-align:center;}
+input,select,button{width:96%;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc;}
+button{background:#007bff;color:#fff;border:none;font-weight:bold;}
+.result{margin-top:20px;padding:15px;background:#f1f6ff;border-radius:8px;}
+.seo-content{margin-top:30px;border-top:1px solid #eee;padding-top:20px;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>BMI Calculator</h1>
+
+<input type="number" id="age" placeholder="Age">
+
+<select id="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<input type="number" id="weight" placeholder="Weight (kg)">
+<input type="number" id="height" placeholder="Height (cm)">
+
+<button onclick="calcBMI()">Calculate BMI</button>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<div class="seo-content">
+<h2>BMI Calculator with Age and Gender</h2>
+<p>This advanced BMI calculator allows you to calculate your body mass index based on weight, height, age, and gender.</p>
+
+<h2>How BMI is Calculated?</h2>
+<p>BMI is calculated using weight divided by height squared. Age and gender help provide better health insights.</p>
+
+<h2>BMI Categories</h2>
+<p>Underweight: Below 18.5 | Normal: 18.5–24.9 | Overweight: 25–29.9 | Obese: 30+</p>
+</div>
+
+</div>
+
+<script>
+function calcBMI(){
+let age=document.getElementById("age").value;
+let gender=document.getElementById("gender").value;
+let w=document.getElementById("weight").value;
+let h=document.getElementById("height").value/100;
+
+if(!age||!gender||!w||!h){alert("Fill all fields");return;}
+
+let bmi=w/(h*h);
+
+let status="";
+if(bmi<18.5) status="Underweight";
+else if(bmi<25) status="Normal";
+else if(bmi<30) status="Overweight";
+else status="Obese";
+
+document.getElementById("result").style.display="block";
+document.getElementById("result").innerHTML=
+`Age: ${age}<br>
+Gender: ${gender}<br>
+BMI: ${bmi.toFixed(2)}<br>
+Status: ${status}`;
+}
+</script>
+
+</body>
+</html>
