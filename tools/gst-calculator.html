@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>GST Calculator Online | Add or Remove GST Easily</title>
+<meta name="description" content="Free GST calculator to calculate GST amount easily. Add or remove GST with our online GST calculator in India.">
+<meta name="keywords" content="gst calculator india, add gst, remove gst, gst calculation online, gst percentage calculator">
+
+<style>
+body { font-family: Arial; background:#f4f7fb; margin:0; }
+.container { max-width:700px; margin:40px auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+h1{text-align:center;}
+input,select,button{width:96%;padding:12px;margin-top:10px;border-radius:6px;border:1px solid #ccc;}
+button{background:#007bff;color:#fff;border:none;font-weight:bold;}
+.result{margin-top:20px;padding:15px;background:#f1f6ff;border-radius:8px;}
+.seo-content{margin-top:30px;border-top:1px solid #eee;padding-top:20px;}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>GST Calculator</h1>
+
+<input type="number" id="amount" placeholder="Enter Amount">
+<input type="number" id="gst" placeholder="GST % (e.g. 18)">
+
+<select id="type">
+<option value="add">Add GST</option>
+<option value="remove">Remove GST</option>
+</select>
+
+<button onclick="calculateGST()">Calculate GST</button>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<div class="seo-content">
+<h2>What is GST?</h2>
+<p>GST (Goods and Services Tax) is a tax applied to goods and services in India. It simplifies indirect taxation.</p>
+
+<h2>How to Calculate GST?</h2>
+<p>GST is calculated by applying a percentage on the original price. This GST calculator helps you add or remove GST instantly.</p>
+
+<h2>GST Calculator India</h2>
+<p>Use this free GST calculator online to calculate GST amount for business, billing, and invoices quickly.</p>
+</div>
+
+</div>
+
+<script>
+function calculateGST(){
+let amount=document.getElementById("amount").value;
+let gst=document.getElementById("gst").value;
+let type=document.getElementById("type").value;
+
+if(!amount||!gst){alert("Fill all fields");return;}
+
+let resultHTML="";
+
+if(type==="add"){
+let gstAmount=(amount*gst)/100;
+let total=Number(amount)+gstAmount;
+
+resultHTML=`GST Amount: ₹${gstAmount.toFixed(2)}<br>Total Amount: ₹${total.toFixed(2)}`;
+}else{
+let base=amount/(1+gst/100);
+let gstAmount=amount-base;
+
+resultHTML=`Base Amount: ₹${base.toFixed(2)}<br>GST: ₹${gstAmount.toFixed(2)}`;
+}
+
+document.getElementById("result").style.display="block";
+document.getElementById("result").innerHTML=resultHTML;
+}
+</script>
+
+</body>
+</html>
