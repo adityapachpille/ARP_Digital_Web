@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- SEO TITLE -->
+  <title>EMI Calculator Online | Calculate Loan EMI Easily</title>
+
+  <!-- SEO META -->
+  <meta name="description" content="Free EMI calculator to calculate your loan EMI online. Calculate home loan, car loan EMI with interest instantly.">
+  <meta name="keywords" content="emi calculator, loan emi calculator, home loan emi calculator india, calculate emi online, emi formula">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, button {
+      width: 96%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f1f6ff;
+      border-radius: 8px;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .seo-content {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>EMI Calculator</h1>
+
+  <label>Loan Amount (₹):</label>
+  <input type="number" id="loan" placeholder="Enter loan amount">
+
+  <label>Interest Rate (% per year):</label>
+  <input type="number" id="rate" placeholder="Enter interest rate">
+
+  <label>Loan Tenure (Years):</label>
+  <input type="number" id="time" placeholder="Enter time in years">
+
+  <button onclick="calculateEMI()">Calculate EMI</button>
+
+  <div id="result" class="result" style="display:none;"></div>
+
+  <!-- SEO CONTENT -->
+  <div class="seo-content">
+
+    <h2>What is EMI?</h2>
+    <p>
+      EMI (Equated Monthly Installment) is the fixed amount you pay every month towards your loan.
+      It includes both principal and interest components.
+    </p>
+
+    <h2>How to Calculate EMI?</h2>
+    <p>
+      EMI is calculated using a standard formula based on loan amount, interest rate, and tenure.
+      Our EMI calculator helps you calculate EMI instantly without manual calculation.
+    </p>
+
+    <h2>Benefits of EMI Calculator</h2>
+    <p>
+      This EMI calculator is useful for planning your loans such as home loan, car loan, or personal loan.
+      It helps you understand your monthly payment and manage your finances better.
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+function calculateEMI() {
+  let P = document.getElementById("loan").value;
+  let R = document.getElementById("rate").value / 12 / 100;
+  let N = document.getElementById("time").value * 12;
+
+  if (!P || !R || !N) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  let EMI = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+
+  document.getElementById("result").style.display = "block";
+
+  document.getElementById("result").innerHTML = `
+    <p><span class="highlight">Monthly EMI:</span> ₹${EMI.toFixed(2)}</p>
+    <p>Total Payment: ₹${(EMI * N).toFixed(2)}</p>
+    <p>Total Interest: ₹${((EMI * N) - P).toFixed(2)}</p>
+  `;
+}
+</script>
+
+</body>
+</html>
